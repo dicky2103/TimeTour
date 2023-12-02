@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <title>Time Tours</title>
+</head>
+<body>
+    <style>
+    body {
+    margin: 0;
+    font-family: 'Titillium Web', sans-serif;
+    } 
+    header {
+    background: linear-gradient(to right, aquamarine, turquoise, #ffef00, #ff69b4);
+    color: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 50px;
+    display: flex;
+    }
+    .header-title {
+        text-align: left;
+        color: white;
+        margin: 14px;
+        font-size: 18px;
+    }
+    nav a {
+            display: inline-block;
+            margin-right: 20px;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        nav a.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    nav {
+        position: absolute;
+        right: 0;
+        display: flex;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        float: left;
+        padding: 15px;
+        
+    }
+    .formcontainer {
+        text-align: center;
+    }
+    main {
+        margin-top: 50px;
+    }
+    h1 {
+        margin-top: 50px;
+        text-align: center;
+        color: darkorange;
+    }
+    img {
+        width: 300px;
+    }
+    .form {
+        text-align: left;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    label {
+        display: inline-block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input, select {
+        width: 100%;
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 5px;
+        border-radius: 3px;
+    }
+    footer {
+        color: white;
+        text-align: center;
+        background: linear-gradient(to right, aquamarine, turquoise, #ffef00, #ff69b4);
+        padding: 10px;
+        margin-top: 50px;
+    }
+    
+   
+    button {
+        background-color: rgb(95, 200, 245);
+        padding: 10px;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        /* margin-left: 60%; */
+    }
+
+    </style>
+    <header>
+        <h1 class="header-title">Time Tours</h1>
+        <nav>
+            <a href='index.html'>Home</a>
+            <a href="booking.html">Booking</a>
+            <a href='about.html'>About us</a>
+        </nav>
+    </header>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+           var navLinks = document.querySelectorAll("nav a");
+
+           // Triggering the animation after a short delay
+           setTimeout(function () {
+               navLinks.forEach(function (link, index) {
+                   setTimeout(function () {
+                       link.classList.add("show");
+                   }, index * 200); // Adjust the delay based on your preference
+               });
+           }, 500); // Adjust the initial delay based on your preference
+       });
+   </script>
+    <main class="formcontainer">
+            <h1>Tour Reservations Form</h1>
+            <img src="assets/booking.png" alt="">
+            <div class="form">
+                <label>Tour Package</label> 
+                <select name="package" id="package" >
+                    <option value="pack1">Sakura Tours | $3500</option>
+                    <option value="pack2">Anime World Tour | $2500</option>
+                    <option value="pack3">Discover Japan | $9000</option>
+                    <option value="pack4">Japanese Ancestry Tours | $4000</option>
+                    <option value="pack5">Hidden Trails |$9500</option>
+                  </select>
+                <label>Full name</label> 
+                <input type="text"> 
+                <label>Email</label> 
+                <input type="email" > 
+                <label>Phone Number</label> 
+                <input type="number" >
+                <label>Pick a Date</label>
+                <input type="date" >
+                <label>How many person?</label>
+                <input id="num-of-people" type="number">
+                <h3>Total Payment : $ <span id="total"> </span></h3>
+
+                <button onclick="process()">Process Booking</button>
+           </div>       
+    </main>
+    <footer>
+        <p><b>Time Tours</b></p>
+        <p>Copyright &copy 2023 Designed by Dicky Azhari Hernuwan </p>
+    </footer>
+</body>
+<script>
+    function goToBooking() {
+    window.location.replace("bookingform.html");
+}
+
+function process() {
+    var allPackage = document.getElementById('package')
+    var package = allPackage.value;
+    var num_of_people = document.getElementById('num-of-people').value
+    var totalPayment
+    if (package === 'pack1') {
+        totalPayment = 3500 * num_of_people;
+    } else if (package === 'pack2') {
+        totalPayment = 2500 * num_of_people;
+    } else if (package === 'pack3') {
+        totalPayment = 9000 * num_of_people;
+    } else if (package === 'pack4') {
+        totalPayment = 4000 * num_of_people;
+    } else if (package === 'pack5') {
+        totalPayment = 9500 * num_of_people;
+    }
+
+    document.getElementById('total').innerHTML = totalPayment;
+    setTimeout(() => {
+        alert('Thank you! Booking succed')
+        window.location.replace('about.html')
+    }, 1000)
+
+}
+</script>
+</html>

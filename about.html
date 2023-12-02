@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <title>Time Tours</title>
+</head>
+<body>
+    <style>
+        body {
+    margin: 0;
+    font-family: 'Titillium Web', sans-serif;
+}
+nav a {
+            display: inline-block;
+            margin-right: 20px;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        nav a.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+main {
+    margin-top: 50px;
+}
+
+header {
+    background: linear-gradient(to right, aquamarine, turquoise, #ffef00, #ff69b4);
+    color: white;
+    /* font-weight: bold;
+    padding-left: 10px; */
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 50px;
+    display: flex;
+}
+
+.header-title{
+    text-align: left;
+    color: white;
+    margin: 14px;
+    font-size: 18px;
+}
+
+.main-container {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 300px;
+}
+
+.package-container {
+    margin: 20px;
+    border: 3px solid black;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 5px 5px 10px gray;
+}
+.package-container:hover{
+    background-color: rgb(221, 233, 236);
+}
+button {
+    background-color: rgb(95, 200, 245);
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    /* margin-left: 60%; */
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(41, 159, 120);
+}
+
+h1 {
+    margin-top: 50px;
+    text-align: center;
+    color: darkorange;
+}
+
+.jumbotron {
+    background: linear-gradient(to right, aquamarine, turquoise, #ffef00, #ff69b4);
+    padding: 50px 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jumbotron img {
+    width: 300px;
+    margin: 30px;
+}
+
+table,
+th,
+td,
+tr,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+th{
+    background-color:darkseagreen;
+    color: white;
+}
+tr:hover{
+    background-color: rgb(221, 233, 236);
+}
+.table {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.table img {
+    width: 200px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    background: linear-gradient(to right, aquamarine, turquoise, #ffef00, #ff69b4);
+    padding: 10px;
+    margin-top: 50px;
+}
+
+nav {
+    position: absolute;
+    right: 0;
+    display: flex;
+    
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    float: left;
+    padding: 15px;
+}
+
+a:hover {
+    color: black;
+}
+.left{
+    margin-left: 60%;
+}
+
+
+.formcontainer{
+    text-align: center;
+}
+.form{
+    text-align: left;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+input, select{
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 3px;
+}
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.about{
+    display: block;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+iframe{
+    margin: 10px;
+}
+h4{
+    display: inline-block;
+    background-color: cornflowerblue;
+    padding: 5px;
+    color: white;
+}
+
+    </style>
+    <header>
+        <h1 class="header-title">Time Tours</h1>
+        <nav>
+            <a href='index.html'>Home</a>
+            <a href='bookingform'>Booking</a>
+            <a href='about.html'>About us</a>
+        </nav>
+    </header>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+           var navLinks = document.querySelectorAll("nav a");
+
+           // Triggering the animation after a short delay
+           setTimeout(function () {
+               navLinks.forEach(function (link, index) {
+                   setTimeout(function () {
+                       link.classList.add("show");
+                   }, index * 200); // Adjust the delay based on your preference
+               });
+           }, 500); // Adjust the initial delay based on your preference
+       });
+   </script>
+    <main class="about">
+        <h1>Hello!</h1>
+        <h2>Thank you for visiting my website!</h2>
+        <img src="assets/avatar.png">
+        <h3>About Me</h3>
+        <p>Let me introduce myself, my name is Dicky Azhari Hernuwan, studying at Bina Facilities Informatics University, majoring in Information Systems, 
+            semester 6. My profession is as a fullstack developer.</p>
+        <h3>What I learn in Timedoor Academy </h3>
+        <p>I studied website programming using HTML, CSS, and JavaScript at Timedoor Coding Camp and finished this project. 
+            Learning website programming is fun, it's more fun when you can make your own website!</p>
+        <h3>What I want to learn next...</h3>
+        <p>I Want to study more on programming and make some cool projects such as Games, Mobile Apps, and so on  </p>
+    </main>
+    <footer>
+        <p><b>Time Tours</b></p>
+        <p>Copyright &copy 2023 Designed by Dicky Azhari Hernuwan </p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: 'Titillium Web', sans-serif;
+    } 
+    header {
+    background: linear-gradient(to right, aquamarine, turquoise, #ffef00, #ff69b4);
+    color: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 50px;
+    display: flex;
+    }
+    .header-title {
+        text-align: left;
+        color: white;
+        margin: 14px;
+        font-size: 18px;
+    }
+    nav {
+        position: absolute;
+        right: 0;
+        display: flex;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        float: left;
+        padding: 15px;
+    }
+    main {
+        margin-top: 50px;
+    }
+    .jumbotron {
+        background: linear-gradient(to right, aquamarine, turquoise, #ffef00, #ff69b4);
+        padding: 50px 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .jumbotron img {
+        width: 300px;
+        margin: 30px;
+    }
+    div {
+        display: block;
+    }
+    h1 {
+        margin-top: 50px;
+        text-align: center;
+        color: darkorange;
+    }
+    .main-container {
+        flex-direction: row;
+        display: flex;
+        justify-content: center;
+    }
+    .package-container {
+        margin: 20px;
+        border: 3px solid black;
+        padding: 16px;
+        border-radius: 16px;
+        box-shadow: 5px 5px 10px gray;
+    }
+    img {
+        width: 300px;
+    }
+    h4 {
+        display: inline-block;
+        background-color: cornflowerblue;
+        padding: 5px;
+        color: white;
+    }
+    .left {
+        margin-left: 60%;
+    }
+    button {
+        background-color: rgb(95, 200, 245);
+        padding: 10px;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        /* margin-left: 60%; */
+    }
+    .table {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    table, th, td, tr, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+    }
+    iframe {
+        margin: 10px;
+    }
+    footer {
+        color: white;
+        text-align: center;
+        background: linear-gradient(to right, aquamarine, turquoise, #ffef00, #ff69b4);
+        padding: 10px;
+        margin-top: 50px;
+    }

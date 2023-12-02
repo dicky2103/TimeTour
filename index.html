@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <title>Time Tours</title>
+</head>
+<body>
+    <style>
+   body {
+    margin: 0;
+    font-family: 'Titillium Web', sans-serif;
+    } 
+    header {
+    background: linear-gradient(to right, aquamarine, turquoise, #ffef00, #ff69b4);
+    color: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 50px;
+    display: flex;
+    }
+    .header-title {
+        text-align: left;
+        color: white;
+        margin: 14px;
+        font-size: 18px;
+    }
+    nav a {
+            display: inline-block;
+            margin-right: 20px;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        nav a.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    nav {
+        position: absolute;
+        right: 0;
+        display: flex;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        float: left;
+        padding: 15px;
+    }
+    main {
+        margin-top: 50px;
+    }
+    .jumbotron {
+        background: linear-gradient(to right, aquamarine, turquoise, #ffef00, #ff69b4);
+        padding: 50px 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .jumbotron img {
+        width: 300px;
+        margin: 30px;
+    }
+    div {
+        display: block;
+    }
+    h1 {
+        margin-top: 50px;
+        text-align: center;
+        color: darkorange;
+    }
+    .main-container {
+        flex-direction: row;
+        display: flex;
+        justify-content: center;
+    }
+    .package-container {
+        margin: 20px;
+        border: 3px solid black;
+        padding: 16px;
+        border-radius: 16px;
+        box-shadow: 5px 5px 10px gray;
+    }
+    img {
+        width: 300px;
+    }
+    h4 {
+        display: inline-block;
+        background-color: cornflowerblue;
+        padding: 5px;
+        color: white;
+    }
+    .left {
+        margin-left: 60%;
+    }
+    button {
+        background-color: rgb(95, 200, 245);
+        padding: 10px;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        /* margin-left: 60%; */
+    }
+    .table {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    table, th, td, tr, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+    }
+    iframe {
+        margin: 10px;
+    }
+    footer {
+        color: white;
+        text-align: center;
+        background: linear-gradient(to right, aquamarine, turquoise, #ffef00, #ff69b4);
+        padding: 10px;
+        margin-top: 50px;
+    }
+
+    </style>
+    <header>
+        <h1 class="header-title">Time Tours</h1>
+        <nav>
+            <a href='#'>Home</a>
+            <a href='booking.html'>Booking</a>
+            <a href='about.html'>About us</a>
+        </nav>
+    </header>
+    <script>
+         document.addEventListener("DOMContentLoaded", function () {
+            var navLinks = document.querySelectorAll("nav a");
+
+            // Triggering the animation after a short delay
+            setTimeout(function () {
+                navLinks.forEach(function (link, index) {
+                    setTimeout(function () {
+                        link.classList.add("show");
+                    }, index * 200); // Adjust the delay based on your preference
+                });
+            }, 500); // Adjust the initial delay based on your preference
+        });
+    </script>
+    <main>
+        <div class="jumbotron">
+            <div>
+                <h1 style="color: yellow; font-size: 50px; text-align: left;">Time Tours</h1>
+                <h3 style="color: white;"><i>“Traveling – it leaves you speechless, then turns you into a storyteller” <br> – Ibn Battuta</i></h3>
+                <p style="color: white;">Website created by : Dicky Azhari Hernuwan</p>
+            </div>
+            <div>
+                <img src="assets/travel-logo.png" alt="">
+            </div>
+        </div>
+        <h1 id="package">Japan Tour Package</h1>
+        <div class="main-container">
+            <div class="package-container">
+                <img src="assets/sakura.jpeg" alt="">
+                <h3>Sakura Tours | 7 Days</h3>
+                <p>Travel Japan during sakura season</p>
+                <h4>USD 3,500 </h4>
+                <button class="left"  onclick="goToBooking()">Book Now</button>
+            </div>
+            <div class="package-container">
+                <img src="assets/anime.jpg" alt="">
+                <h3>Anime World Tours| 5 Days</h3>
+                <p>Deeper into the Anime</p>
+                <h4>USD 2,500</h4>
+                <button class="left"  onclick="goToBooking()">Book Now</button>
+            </div>
+            <div class="package-container">
+                <img src="assets/shibuya.jpg" alt="">
+                <h3>Discover Japan | 10 Days</h3>
+                <p>Travel to all the must see cities of Japan</p>
+                <h4>USD 9,000 </h4>
+                <button class="left" onclick="goToBooking()">Book Now</button>
+            </div>
+        </div>
+        <h1>Tours Detail</h1>
+        <div class="table">
+            <table>
+                <tr>
+                    <th>Package</th>
+                    <th>Desc</th>
+                    <th>Places</th>
+                    <th>Price</th>
+                    <th>Booking</th>
+                </tr>
+                <tr>
+                    <td><img src="assets/sakura.jpeg" alt=""></td>
+                    <td>Anime World Tours| 7 Days</td>
+                    <td>Tokyo, Nagano, Nakasendo <br> Takayama, Shirakawago, Kanazawa</td>
+                    <td>USD 3,500</td>
+                    <td><button  onclick="goToBooking()">Book Now</button></td>
+                </tr>
+                <tr>
+                    <td><img src="assets/anime.jpg" alt=""></td>
+                    <td>Anime World Tours | 5 Days</td>
+                    <td>Osaka, Universal Studio, Harajuku <br>Shibuya Haciko, Akihabara, Ghibli Museum</td>
+                    <td>USD 2,500</td>
+                    <td><button  onclick="goToBooking()">Book Now</button></td>
+                </tr>
+                <tr>
+                    <td><img src="assets/shibuya.jpg" alt=""></td>
+                    <td>Discover Japan | 10 Days</td>
+                    <td>Tokyo, Hakone, Atami <br>Kyoto, Nara, Himeji, Hiroshima</td>
+                    <td>USD 9,000</td>
+                    <td><button  onclick="goToBooking()">Book Now</button></td>
+                </tr>
+                <tr>
+                    <td><img src="assets/hiroshima.jpg" alt=""></td>
+                    <td>Japanese Ancestry Tours | 7 Days</td>
+                    <td>Tokyo, Hakone,Kyoto, Suo Island <br> Nara, Himeji,Hiroshima</td>
+                    <td>USD 4,000</td>
+                    <td><button  onclick="goToBooking()">Book Now</button></td>
+                </tr>
+                <tr>
+                    <td><img src="assets/Kanazawa.jpg" alt=""></td>
+                    <td>Hidden Trails | 7 Days</td>
+                    <td>Tokyo, Nagano, Kamikochi, Kyoto<br> Nara,Takayama, Shirakawago, Kanazawa</td>
+                    <td>USD 9,500</td>
+                    <td><button  onclick="goToBooking()">Book Now</button></td>
+                </tr>
+            </table>
+        </div>
+        <h1>Travel Guide Playlist</h1>
+        <div class="main-container">  
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/00ZXaXIABMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/CxuiFNYnEr4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </main>
+    <footer>
+        <p><b>Time Tours</b></p>
+        <p>Copyright &copy 2023 Designed by Dicky Azhari Hernuwan </p>
+    </footer>
+    <script>
+        function goToBooking() {
+    window.location.replace("booking.html");
+}
+
+function process() {
+    var allPackage = document.getElementById('package')
+    var package = allPackage.value;
+    var num_of_people = document.getElementById('num-of-people').value
+    var totalPayment
+    if (package === 'pack1') {
+        totalPayment = 3500 * num_of_people;
+    } else if (package === 'pack2') {
+        totalPayment = 2500 * num_of_people;
+    } else if (package === 'pack3') {
+        totalPayment = 9000 * num_of_people;
+    } else if (package === 'pack4') {
+        totalPayment = 4000 * num_of_people;
+    } else if (package === 'pack5') {
+        totalPayment = 9500 * num_of_people;
+    }
+
+    document.getElementById('total').innerHTML = totalPayment;
+    setTimeout(() => {
+        alert('Thank you! Booking succed')
+        window.location.replace('about.html')
+    }, 1000)
+
+}
+    </script>
+</body>
+</html>
